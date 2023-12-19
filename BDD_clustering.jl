@@ -416,7 +416,7 @@ function cluster_states(layer::Layer{S,D,V}, n_clusters::Int64, max_iterations::
 		end
 		push!(clusters[clustering.assignments[i]], states[i])
 	end
-	println(clusters)
+	
 	@assert length(clusters) <= n_clusters
 	@assert length(layer) == sum([length(clusters[i]) for i in keys(clusters)])
 	return clusters
